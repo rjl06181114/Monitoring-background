@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="projectRtc">
+
+<head>
+    <title>
+        健康管理后台
+    </title>
+    <base href="/" />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="javascripts/adapter.js"></script>
+    <script type="text/javascript" src="javascripts/rtcClient.js"></script>
+
+    <script type="text/javascript" src="javascripts/angular.min.js">
+    </script>
+
+    <script type="text/javascript" src="javascripts/app.js"></script>
+</head>
+
+<body>
+    <!-- <h1>
+        <%= header %>
+    </h1> -->
+    <h1>空巢老人身体健康监控后台</h1>
+
+    <%= include local-cam %>
+
+        <%= include remote-streams %>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<div class="remoteStreams" ng-controller="RemoteStreamsController as rtc">
+    <!--   <h2>Remote Streams</h2> -->
+
+    <div id="remoteVideosContainer"></div>
+
+    <table>
+
+        <tbody>
+            <tr>
+                <td><a href="/user/addUser.html" target="_self">添加联系人</a></td>
+                <td><a href="/user/addresslist.html" target="_self">通讯录</a></td>
+            </tr>
+            <tr ng-repeat="stream in rtc.remoteStreams" ng-class="{'selected' : stream.isPlaying}">
+
+                <td class="caller">
+                    <%= caller %>
+                </td>
+                <!-- <td ng-click="rtc.view(stream)"><a>视频</a></td> -->
+
+                <!-- <td ng-click="rtc.send()"><a>添加通讯录</a></td> -->
+                <td ng-click="rtc.call(stream)"><a>接听</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <li ng-click="rtc.loadData()" style="width: 200px;margin-top: 10px;">
+        <a href class="refresh">刷新</a>
+    </li>
